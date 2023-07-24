@@ -2,6 +2,9 @@ import { Table } from "antd";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../../styles/table.scss";
+import { Space, Typography } from "antd";
+
+const { Text, Link } = Typography;
 
 const columns = [
   {
@@ -12,7 +15,7 @@ const columns = [
 ];
 
 const TableComponent = () => {
-  const data = useSelector((state) => state.maps.positionState);
+  const { positionState: data, isError } = useSelector((state) => state.maps);
   const dispatch = useDispatch();
 
   const dataSource = data.map((way) => ({
@@ -37,6 +40,8 @@ const TableComponent = () => {
         dataSource={dataSource}
         pagination={false}
       />
+      <br />
+      {isError && <Text type="danger">{isError.message}</Text>}
     </div>
   );
 };

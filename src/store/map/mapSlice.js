@@ -52,6 +52,7 @@ const initialState = {
     },
   ],
   isLoading: false,
+  isError: "",
   selectedWay: null,
   selectedWayPolyline: [],
 };
@@ -63,12 +64,22 @@ export const mapSlice = createSlice({
     setSelectedWay: (state, action) => {
       state.isLoading = true;
       state.selectedWay = action.payload;
+      state.isError = "";
     },
     setSelectedWayPolyline: (state, action) => {
       state.isLoading = false;
+      state.isError = "";
       state.selectedWayPolyline = action.payload;
+    },
+    setSelectedWayPolylineError: (state, action) => {
+      state.isLoading = false;
+      state.isError = action.payload;
     },
   },
 });
 
-export const { setSelectedWay, setSelectedWayPolyline } = mapSlice.actions;
+export const {
+  setSelectedWay,
+  setSelectedWayPolyline,
+  setSelectedWayPolylineError,
+} = mapSlice.actions;
