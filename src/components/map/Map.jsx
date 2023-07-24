@@ -5,7 +5,7 @@ import Routing from "./routing/Routing";
 
 const Map = () => {
   return (
-    <div id="map">
+    <div className="map">
       <MapContainer
         center={[59.82934196, 30.42423701]}
         zoom={8}

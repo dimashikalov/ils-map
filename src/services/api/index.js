@@ -8,7 +8,7 @@ export default class ApiService {
         `${ROUTE_API_URL}/${startPoint.lat},${startPoint.lat};${checkPoint.lat},${checkPoint.lat};${endPoint.lat},${endPoint.lat}?geometries=geojson`
       );
     } catch (error) {
-      console.log("error", error);
+      throw new Error(error.message);
     }
   }
 }

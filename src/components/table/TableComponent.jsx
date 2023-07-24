@@ -1,6 +1,7 @@
 import { Table } from "antd";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import "../../styles/table.scss";
 
 const columns = [
   {
@@ -8,18 +9,6 @@ const columns = [
     dataIndex: "name",
     key: "id",
   },
-  //   {
-  //     title: "Точка 1 ",
-  //     dataIndex: "point1",
-  //   },
-  //   {
-  //     title: "Точка 2 (lat, lng)",
-  //     dataIndex: "point2",
-  //   },
-  //   {
-  //     title: "Точка 3 (lat, lng)",
-  //     dataIndex: "point3",
-  //   },
 ];
 
 const TableComponent = () => {
@@ -38,7 +27,7 @@ const TableComponent = () => {
   };
 
   return (
-    <div>
+    <div className="table">
       <Table
         rowSelection={{
           type: "radio",
@@ -46,6 +35,7 @@ const TableComponent = () => {
         }}
         columns={columns}
         dataSource={dataSource}
+        pagination={false}
       />
     </div>
   );
