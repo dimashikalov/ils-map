@@ -14,8 +14,10 @@ function* fetchWaySelection(action) {
     checkPoint,
     endPoint
   );
-  console.log(responce);
-  // yield put(setSelectedWayPolyline())
+  console.log("res", responce);
+  yield put(
+    setSelectedWayPolyline(responce.data.routes[0].geometry.coordinates)
+  );
 }
 
 function* waitFetchWaySelection() {

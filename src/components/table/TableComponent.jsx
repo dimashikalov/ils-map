@@ -1,6 +1,6 @@
 import { Table } from "antd";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const columns = [
   {
@@ -24,6 +24,7 @@ const columns = [
 
 const TableComponent = () => {
   const data = useSelector((state) => state.maps.positionState);
+  const dispatch = useDispatch();
 
   const dataSource = data.map((way) => ({
     key: way.id,
@@ -32,8 +33,10 @@ const TableComponent = () => {
   }));
 
   const onRowSelect = (selectedRows) => {
-    const rowData = data.find((c) => c.id === selectedRows[0].idWay);
+    const rowData = data.find((c) => c.id === selectedRows[0]);
+    dispatch({ type: "saga/setSelectedWay", payload: rowData });
   };
+
   return (
     <div>
       <Table

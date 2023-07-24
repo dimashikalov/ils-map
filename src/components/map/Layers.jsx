@@ -26,10 +26,6 @@ const Layers = () => {
   return (
     <>
       <LayersControl position="topright">
-        <Marker position={[59.84660399, 30.29496392]}>
-          <Popup>Test marker</Popup>
-        </Marker>
-
         <TileLayer
           attribution='Map data: &amp;copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &amp;copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
           url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"

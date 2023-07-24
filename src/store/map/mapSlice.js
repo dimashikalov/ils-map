@@ -13,7 +13,7 @@ const initialState = {
         lat: 59.84934196,
         lng: 30.42423701,
       },
-      poiendPointnt3: {
+      endPoint: {
         lat: 59.83567701,
         lng: 30.38064206,
       },
