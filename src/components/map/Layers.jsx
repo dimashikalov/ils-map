@@ -7,6 +7,8 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import "leaflet-routing-machine";
 
 const Layers = () => {
   const map = useMapEvents({
@@ -25,9 +27,7 @@ const Layers = () => {
     <>
       <LayersControl position="topright">
         <Marker position={[59.84660399, 30.29496392]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
+          <Popup>Test marker</Popup>
         </Marker>
 
         <TileLayer

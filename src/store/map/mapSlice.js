@@ -4,7 +4,7 @@ const initialState = {
   positionState: [
     {
       id: 1,
-      transcription: "Маршрут 1",
+      name: "Маршрут 1",
       point1: {
         lat: 59.84660399,
         lng: 30.29496392,
@@ -20,7 +20,7 @@ const initialState = {
     },
     {
       id: 2,
-      transcription: "Маршрут 2",
+      name: "Маршрут 2",
       point1: {
         lat: 59.82934196,
         lng: 30.42423701,
@@ -36,7 +36,7 @@ const initialState = {
     },
     {
       id: 3,
-      transcription: "Маршрут 3",
+      name: "Маршрут 3",
       point1: {
         lat: 59.83567701,
         lng: 30.38064206,
@@ -56,7 +56,7 @@ const initialState = {
 };
 
 export const mapSlice = createSlice({
-  name: "map",
+  name: "maps",
   initialState,
   reducers: {
     seSelectedWay: (state, action) => {
@@ -67,5 +67,3 @@ export const mapSlice = createSlice({
 });
 
 export const { seSelectedWay } = mapSlice.actions;
-
-export default mapSlice.reducer;
