@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ils-map/static/css/main.c204b807.css",
+    "main.js": "/ils-map/static/js/main.da9f158c.js",
+    "index.html": "/ils-map/index.html",
+    "main.c204b807.css.map": "/ils-map/static/css/main.c204b807.css.map",
+    "main.da9f158c.js.map": "/ils-map/static/js/main.da9f158c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c204b807.css",
+    "static/js/main.da9f158c.js"
+  ]
+}
