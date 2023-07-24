@@ -5,15 +5,15 @@ const initialState = {
     {
       id: 1,
       name: "Маршрут 1",
-      point1: {
+      startPoint: {
         lat: 59.84660399,
         lng: 30.29496392,
       },
-      point2: {
+      checkPoint: {
         lat: 59.84934196,
         lng: 30.42423701,
       },
-      point3: {
+      poiendPointnt3: {
         lat: 59.83567701,
         lng: 30.38064206,
       },
@@ -21,15 +21,15 @@ const initialState = {
     {
       id: 2,
       name: "Маршрут 2",
-      point1: {
+      startPoint: {
         lat: 59.82934196,
         lng: 30.42423701,
       },
-      point2: {
+      checkPoint: {
         lat: 59.82761295,
         lng: 30.41705607,
       },
-      point3: {
+      endPoint: {
         lat: 59.84660399,
         lng: 30.29496392,
       },
@@ -37,15 +37,15 @@ const initialState = {
     {
       id: 3,
       name: "Маршрут 3",
-      point1: {
+      startPoint: {
         lat: 59.83567701,
         lng: 30.38064206,
       },
-      point2: {
+      checkPoint: {
         lat: 59.84660399,
         lng: 30.29496392,
       },
-      point3: {
+      endPoint: {
         lat: 59.82761295,
         lng: 30.41705607,
       },
@@ -53,17 +53,22 @@ const initialState = {
   ],
   isLoading: false,
   selectedWay: null,
+  selectedWayPolyline: [],
 };
 
 export const mapSlice = createSlice({
   name: "maps",
   initialState,
   reducers: {
-    seSelectedWay: (state, action) => {
+    setSelectedWay: (state, action) => {
       state.isLoading = true;
       state.selectedWay = action.payload;
+    },
+    setSelectedWayPolyline: (state, action) => {
+      state.isLoading = false;
+      state.selectedWayPolyline = action.payload;
     },
   },
 });
 
-export const { seSelectedWay } = mapSlice.actions;
+export const { setSelectedWay, setSelectedWayPolyline } = mapSlice.actions;
