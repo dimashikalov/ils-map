@@ -1,7 +1,7 @@
 import React from "react";
-import { MapContainer, ZoomControl } from "react-leaflet";
+import { MapContainer, ZoomControl, TileLayer } from "react-leaflet";
 import "../../styles/map.scss";
-import Layers from "./Layers";
+import Routing from "./routing/Routing";
 
 const Map = () => {
   return (
@@ -12,8 +12,12 @@ const Map = () => {
         zoomControl={false}
         style={{ height: "100vh", width: "100%" }}
       >
-        <Layers />
+        <TileLayer
+          attribution='&amp;copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
         <ZoomControl position="topright" />
+        <Routing />
       </MapContainer>
     </div>
   );
